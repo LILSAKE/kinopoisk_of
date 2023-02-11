@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <style>
+        body {
+            margin: 0;
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        * {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        button {
+            font-weight: bold;
+            font-size: 20px;
+        }
+        .film {
+            margin-top: 30px;
+            display: flex;
+            width: 1000px;
+            height: fit-content;
+            padding: 20px;
+            background-color: #80010c;
+            color: white;
+            border-radius: 10px;
+        }
+        .infoFilm {
+            display: flex;
+            justify-content: space-around;
+            flex-direction: column;
+            margin-left: 20px;
+        }
+        .imgClass {
+            border-radius: 5px;
+            width: 250px;
+            box-shadow: 15px 15px 10px -5px rgba(43, 1, 1, 0.25);
+        }
+        span {
+            font-weight: bolder;
+        }
+        .YouComment {
+            background-color: white;
+            border-radius: 5px;
+            margin: 10px;
+            align-items: center;
+            display: flex;
+            width: 1200px;
+            font-weight: bolder;
+            justify-content: space-between;
+        }
+        .iconUser {
+            padding: 10px;
+            font-size: 50px;
+            font-weight: bold;
+        }
+        .textUserName {
+            padding: 5px;
+            height: 30px;
+            margin-left: 10px;
+            border: 0;
+            font-size: 25px;
+            width: 100px;
+            text-align: right;
+        }
+        .textComment {
+            font-size: 20px;
+            padding: 5px;
+            height: 30px;
+            width: 50%;
+            margin-left: 10px;
+        }
+        .grade {
+            display: flex;
+            margin: 0 10px 0 10px;
+        }
+        .star {
+            font-size: 50px;
+        }
+        .grede1 {
+            padding: 10px;
+        }
+        .active {
+            color: yellow;
+            font-weight: bolder;
+        }
+        .save {
+            padding: 10px;
+            margin: 10px;
+            position: relative;
+            right: 0;
+            margin-left: 0;
+        }
+        .userName {
+            font-weight: bold;
+            margin: 10px;
+        }
+        .com {
+            margin: 10px;
+            margin-left: 0;
+            width: 580px;
+        }
+        .date {
+            font-weight: lighter;
+            padding: 10px;
+            margin-right: 10px;
+        }
+        .comment {
+            background-color: rgb(252, 252, 252);
+            color: black;
+            margin: 10px;
+            display: flex;
+            align-items: center;
+            border-radius: 5px;
+        }
+        .comUse {
+            justify-content: center;
+            display: flex;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+    </style>    
+</head> 
+<body>      
+    <div class="film">
+        <div class="infoImg"></div>
+        <div class="infoFilm"></div>
+    </div>
+    <div class="poleComents">
+        <div class="YouComment">
+            <span class="material-symbols-outlined iconUser">account_circle</span>
+            <input type="text" class="textUserName">:
+            <input type="text" class="textComment" value="">
+            <div class="grade">
+                <span onclick="whyGrade(1)" class="material-symbols-outlined star">star</span>
+                <span onclick="whyGrade(2)" class="material-symbols-outlined star">star</span>
+                <span onclick="whyGrade(3)" class="material-symbols-outlined star">star</span>
+                <span onclick="whyGrade(4)" class="material-symbols-outlined star">star</span>
+                <span onclick="whyGrade(5)" class="material-symbols-outlined star">star</span>
+            </div>
+            <button onclick="addComment()" class="save">SAVE</button>
+        </div>
+        <div id="comments"></div>
+        
+    </div>     
+     
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <script src="filmData.js"></script>
+</body>
+</html>

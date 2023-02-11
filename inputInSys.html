@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html {
+            background-color:#214c84;
+            background-blend-mode:overlay;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            background-image:url(../../assets/img/image4.jpg);
+            background-repeat:no-repeat;
+            background-size:cover;
+            height:100%;
+          }
+          
+          body {
+            background-color:transparent;
+          }
+          
+          .registration-cssave{
+            padding:50px 0;
+          }
+          
+          .registration-cssave div {
+            max-width:800px;
+            padding:50px 70px;
+            border-radius:10px;
+            box-shadow:4px 4px 15px rgba(0, 0, 0, 0.2);
+            background-color:#fff;
+          }
+          
+          .registration-cssave div h3 {
+            font-weight:bold;
+            margin-bottom:30px;
+          }
+          
+          .registration-cssave .item {
+            border-radius:10px;
+            margin-bottom:25px;
+            padding:10px 20px;
+          }
+          
+          .registration-cssave .create-account {
+            border-radius:30px;
+            padding:10px 20px;
+            font-size:18px;
+            font-weight:bold;
+            background-color:#d641bd;
+            border:none;
+            color:white;
+            margin-top:20px;
+          }
+          
+          @media (max-width: 576px) {
+            .registration-cssave div {
+              padding:50px 20px;
+            }
+          }
+    </style>
+</head>
+<body>
+    
+        <div class="registration-cssave">
+            <div>
+                <h3 class="text-center">Форма входа</h3>
+                <div class="form-group">
+                    <input class="form-control item" type="text" name="username" maxlength="15" minlength="4" pattern="^[a-zA-Z0-9_.-]*$" id="username" placeholder="Логин" required>
+                </div>
+                <div class="form-group">
+                    <input class="form-control item" type="password" name="Пароль" minlength="0" id="password" placeholder="password" required>
+                </div>
+                <div class="form-group">
+                    <button onclick="Admin()" class="btn btn-primary btn-block create-account" >Вход в аккаунт</button>
+                </div>
+            </div>
+        </div>
+    
+    <script>
+        const Admin = () => {
+            const userName = document.getElementById("username")
+            const userPassword = document.getElementById("password")
+            console.log(userName.value, userPassword.value)
+            if(userName.value.lenght <= 0 && userName.value.lenght > 15) {
+            }
+
+            if(userName.value == "123456" && userPassword.value == "123456") {
+                console.log(window.location.href)
+                window.location.href = "newWindow.html"
+            } else {
+                document.querySelector(".registration-cssave").innerHTML = "Что то пошло не так..."
+            }
+        }
+    </script>
+</body>
+</html>
